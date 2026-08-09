@@ -1,5 +1,5 @@
 {
-  "name": "react-ai-kit",
+  "name": "react-llm-hooks",
   "version": "0.1.0",
   "description": "Provider-agnostic React hooks for LLM integration — works without a backend",
   "keywords": ["react", "hooks", "llm", "ai", "openai", "anthropic", "gemini", "ollama", "streaming"],

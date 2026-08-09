@@ -11,7 +11,7 @@ export default function App() {
   return (
     <div style={{ maxWidth: 800, margin: '0 auto', padding: '2rem 1rem' }}>
       <h1 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '0.25rem' }}>
-        react-ai-kit
+        react-llm-hooks
       </h1>
       <p style={{ color: '#888', marginBottom: '2rem', fontSize: '0.9rem' }}>
         Provider-agnostic React hooks for LLM integration

@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: latest
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Type check
+        run: pnpm --filter react-llm-hooks lint
+
+      - name: Build
+        run: pnpm --filter react-llm-hooks build
+
+  publish:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: latest
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+          registry-url: https://registry.npmjs.org
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm --filter react-llm-hooks build
+
+      - name: Publish to npm (if version changed)
+        run: |
+          PUBLISHED=$(npm view react-llm-hooks version 2>/dev/null || echo "0.0.0")
+          LOCAL=$(node -p "require('./packages/core/package.json').version")
+          if [ "$PUBLISHED" != "$LOCAL" ]; then
+            pnpm --filter react-llm-hooks publish --access public --no-git-checks
+          else
+            echo "Version $LOCAL already published, skipping."
+          fi
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

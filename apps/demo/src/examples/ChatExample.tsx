@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
-import { useChat } from 'react-ai-kit'
-import type { ProviderConfig } from 'react-ai-kit'
+import { useChat } from 'react-llm-hooks'
+import type { ProviderConfig } from 'react-llm-hooks'
 
 const PROVIDERS = ['openai', 'anthropic', 'google', 'ollama'] as const
 

@@ -1,4 +1,4 @@
-# react-ai-kit
+# react-llm-hooks
 
 Provider-agnostic React hooks for LLM integration. Works **without a backend** — drop it into any Vite, CRA, or React app and start streaming in minutes.
 
@@ -19,11 +19,11 @@ Provider-agnostic React hooks for LLM integration. Works **without a backend** �
 ## Installation
 
 ```bash
-npm install react-ai-kit
+npm install react-llm-hooks
 # or
-pnpm add react-ai-kit
+pnpm add react-llm-hooks
 # or
-yarn add react-ai-kit
+yarn add react-llm-hooks
 ```
 
 ## Quick Start
@@ -31,7 +31,7 @@ yarn add react-ai-kit
 ### `useChat` — multi-turn conversation
 
 ```tsx
-import { useChat } from 'react-ai-kit'
+import { useChat } from 'react-llm-hooks'
 
 function Chat() {
   const { messages, input, setInput, append, stop, isLoading } = useChat({
@@ -58,7 +58,7 @@ function Chat() {
 ### `useCompletion` — single prompt
 
 ```tsx
-import { useCompletion } from 'react-ai-kit'
+import { useCompletion } from 'react-llm-hooks'
 
 function Completion() {
   const { completion, complete, stop, isLoading } = useCompletion({
@@ -181,7 +181,7 @@ Returns:
 ## Running the Demo
 
 ```bash
-git clone https://github.com/your-username/react-ai-kit
+git clone https://github.com/TouseefQ/react-ai-kit
 cd react-ai-kit
 pnpm install
 pnpm build          # build packages/core

@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { useCompletion } from 'react-ai-kit'
-import type { ProviderConfig } from 'react-ai-kit'
+import { useCompletion } from 'react-llm-hooks'
+import type { ProviderConfig } from 'react-llm-hooks'
 
 const PROVIDERS = ['openai', 'anthropic', 'google', 'ollama'] as const
 

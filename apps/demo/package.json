@@ -11,7 +11,7 @@
   "dependencies": {
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
-    "react-ai-kit": "workspace:*"
+    "react-llm-hooks": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^18.3.0",
