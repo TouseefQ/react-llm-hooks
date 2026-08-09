@@ -2,9 +2,9 @@
 
 Provider-agnostic React hooks for LLM integration. Works **without a backend** — drop it into any Vite, CRA, or React app and start streaming in minutes.
 
-## Why react-ai-kit?
+## Why react-llm-hooks?
 
-| Feature | react-ai-kit | Vercel AI SDK |
+| Feature | react-llm-hooks | Vercel AI SDK |
 |---|---|---|
 | No backend required | ✅ | ❌ (requires API routes) |
 | Direct browser → LLM | ✅ | ❌ |
@@ -181,8 +181,8 @@ Returns:
 ## Running the Demo
 
 ```bash
-git clone https://github.com/TouseefQ/react-ai-kit
-cd react-ai-kit
+git clone https://github.com/TouseefQ/react-llm-hooks
+cd react-llm-hooks
 pnpm install
 pnpm build          # build packages/core
 pnpm dev            # start demo app at http://localhost:5173
